@@ -1,20 +1,52 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import logo from "./React-icon.png";
+import "./index.css";
 
-const page = (
-  <div>
-    <img src={logo} alt="react logo"></img>
-    <h1>Fun facts about React</h1>
-    <ul>
-      <li>Was first released in 2013</li>
-      <li>Was originally created by Jordan Walke</li>
-      <li>Has well over 100K star on Github</li>
-      <li>Is maintained by Facebook</li>
-      <li>Powers thousands of enterprise apps, including mobile apps</li>
-    </ul>
-  </div>
-);
+function Header() {
+  return (
+    <header>
+      <nav className="nav-bar">
+        <img src="./React-icon.png" alt="logo" className="logo"></img>
+        <ul className="nav-items">
+          <li>Pricing</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
+  );
+}
+
+function MainContent() {
+  return (
+    <div className="main-content">
+      <h1>Challenge 1: Part 2</h1>
+      <ol>
+        <li>Grows my brain noggin</li>
+        <li>Increases number of synapses</li>
+        <li>Makes it so I don't become a vegetable in my old age</li>
+      </ol>
+    </div>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="footer">
+      <small>© 2022 Dawes development. All rights reserved</small>
+    </footer>
+  );
+}
+
+function Page() {
+  return (
+    <div className="page">
+      <Header />
+      <MainContent />
+      <Footer />
+    </div>
+  );
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(page);
+root.render(<Page />);
